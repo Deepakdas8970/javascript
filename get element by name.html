@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <input type="text" name="u" style="background-color: rgb(250,230,210); border: 1px solid black;">
+  <button onclick="getname()">submit</button>
+  <h1 class="x"></h1>
+</body>
+<script>
+  function getname(){
+    var a=document.getElementsByName('u')[0].value;
+    document.getElementsByClassName('x')[0].innerHTML=a;
+  }
+</script>
+
+</html>

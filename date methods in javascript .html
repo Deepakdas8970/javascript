@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title></title>
+</head>
+
+<body>
+<h1 id="res" style="color: red;"></h1>
+<button onclick="gdate()">Date</button>
+</body>
+<script>
+  var date= new Date();
+  function gdate(){
+    document.getElementById('res').innerHTML=date;
+  }
+  console.log(date.getTime())
+</script>
+
+</html>

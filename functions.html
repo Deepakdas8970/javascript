@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <input type="text" name="cal" id="cal"/>
+  <button onclick="cal()">
+    Show
+    </button>
+    <br/>
+    <div class="main"></div>
+
+</body>
+<script>
+ function cal(){
+   var name=document.getElementById('cal').value;
+   var string="Hello "+name;
+   document.getElementsByClassName('main')[0].innerHTML=string;
+   }
+</script>
+
+</html>

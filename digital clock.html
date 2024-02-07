@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <style>
+  .main{
+    padding-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    height: 150px;
+    background-color: #444A10;
+    border: 2px groove red;
+  }
+  </style>
+</head>
+
+<body onload="time()">
+  <h1 class="main"></h1>
+
+</body>
+<script>
+function time(){ 
+  var n= new Date();
+  var h=n.getHours();
+  var m=n.getMinutes();
+  var s=n.getSeconds();
+  var session;
+  if(h>=12)
+  {
+    session="PM";
+    h=h-12;
+  }
+  else{
+    session="AM"
+  }
+  if(m<=9){
+    m="0"+m;
+  }
+  if (s <= 9) {
+    s= "0" + s;
+  }
+  if (h <= 9) {
+    h= "0" + h;
+  }
+  
+  var st= h+" : "+m+" : "+s+" "+session;
+  
+  document.getElementsByTagName("h1")[0].innerHTML=st;
+  setTimeout(time,1000);
+  
+  }
+</script>
+</html>
