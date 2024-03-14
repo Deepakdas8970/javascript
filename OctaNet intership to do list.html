@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>To do list</title>
+       <script src="o.js">o.js</script>
+      <style type="text/css" media="all">
+           body{
+                   background-color: black;
+           }   
+           .container{
+                   color: white;
+                   text-align: center;
+                  font-size: 50px;
+                  background: red;
+                  padding-top: 50px;
+                  padding-bottom: 10px;
+                  width: 80vw;
+                  margin: auto;
+                  position: relative;
+           }
+           #row{
+                   margin: auto;
+                   width: 80vw;
+                   background: white ;
+                   height: 60px;
+                   font-size: 30px;
+                   position: relative;
+                   
+           }
+           #row3 {
+                   margin: auto;
+                   width: 80vw;
+                   background: white;
+                   min-height: 32px;
+                   font-size: 30px;
+                   position: relative;
+                   
+             
+           
+           }
+           #rowo {
+                   margin: auto;
+                   width: 80vw;
+                   background:hsla(261, 11%, 78%, 1);
+                   height: 60px;
+                   font-size: 30px;
+           
+           }
+           .colse{
+                   padding: 15px;
+                   width: 90%;
+                   background: yellow;
+                   
+                   
+           }
+           .colso {
+                   padding: 15px;
+                   position: relative;
+           
+           }
+           .cut{
+                   position: fixed;
+                   left:85%;
+                  
+           }
+           .cut:hover{
+                   background: red;
+           }
+           .padding
+           {
+                   padding: 15px;
+                   border: 1px solid rgba(255, 241, 29, 1);
+                  width: 89%;
+           }
+      </style>
+        
+</head>
+
+<body>
+        <div class="container" >
+                To Do list
+              <div style=" font-size: 25px;width: 80%;">
+                      <input type="text" style="width: 60%;height:30px; font-size: 25px;" id="idata">
+                     <span style=" background: grey;font-size: 25px; padding: 4px 8px 4px 8px;" id="add">Add</span>
+              </div>
+              
+        </div>
+
+        <div id="row3">
+                 
+                 <div class="padding">
+                        java
+                         <span onclick="close1()" class="cut">×</span>
+                 </div>
+                 <div class="padding" id="col1">
+                         python
+                         <span onclick="close2()" class="cut">×</span>
+                 </div>
+                 <div class="padding" id="col2">
+                        dbms
+                         <span onclick="close3()" class="cut">×</span>
+                 </div>
+                 
+                  
+                   
+         </div>
+
+</body>
+<script>
+       
+        let add=document.querySelector('#add');
+        add.addEventListener('click',function(){
+                
+                
+             let idat= document.querySelector('#idata').value;
+             
+               let elmt= document.createElement('div');
+               
+               elmt.classList.add('padding');
+               elmt.innerText=idat;
+               
+             // span creation within the new div
+             let cuta= document.createElement('span');
+            cuta.classList.add('cut');
+            cuta.innerText='×';
+            
+            // delete on click cut
+            
+            cuta.addEventListener('click', function() {
+                    
+                   elmt.remove();
+                   
+                   
+            })
+          
+            elmt.appendChild(cuta);
+            
+            
+            // add new div in row3
+            document.querySelector('#row3').appendChild(elmt);
+           
+        });
+        
+        
+  
+       
+       
+       
+       //close function for default div
+        function close1 (){
+                document.querySelector('.padding').style.display='none';
+        }
+        function close2 (){
+                document.querySelector('#col1').style.display='none';
+                
+                
+        }
+        function close3() {
+                document.querySelector('#col2').style.display = 'none';
+        
+        
+        }
+        
+        
+</script>
+
+</html>
